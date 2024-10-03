@@ -8,6 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.classList.toggle('show');
     });
 
+    // Dark/Light mode toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        themeToggle.querySelector('.sun-icon').classList.toggle('hidden');
+        themeToggle.querySelector('.moon-icon').classList.toggle('hidden');
+    });
+
     // Team toggle functionality
     const teamToggleButtons = document.querySelectorAll('.team-toggle button');
     const teamGrids = document.querySelectorAll('.team-grid');

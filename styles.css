@@ -1,15 +1,21 @@
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #0E1B31;
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #000000;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #0E1B31;
+    color: #FFFFFF;
 }
 
 /* Navigation Bar */
 header {
-    background-color: rgba(14, 27, 49, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     position: fixed;
     width: 100%;
     top: 0;
@@ -246,4 +252,47 @@ footer {
     /* Ensure content is scrollable */
     body { overflow-x: hidden; }
     main { padding-top: 80px; }
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 60px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: #000000;
+}
+
+.theme-toggle .moon-icon {
+    display: none;
+}
+
+body.dark-mode .theme-toggle {
+    background-color: #0E1B31;
+    border-color: #ffffff;
+}
+
+body.dark-mode .theme-toggle svg {
+    fill: #ffffff;
+}
+
+body.dark-mode .theme-toggle .sun-icon {
+    display: none;
+}
+
+body.dark-mode .theme-toggle .moon-icon {
+    display: block;
 }
