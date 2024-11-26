@@ -9,7 +9,7 @@ body {
 }
 
 body.dark-mode {
-    background-color: #0E1B31;
+    background-color: #000b1d;
     color: #FFFFFF;
 }
 
@@ -228,7 +228,7 @@ section {
 
 /* Footer */
 footer {
-    background-color: rgba(14, 27, 49, 0.8);
+    background-color: rgba(4, 8, 15, 0.8);
     padding: 20px;
     text-align: center;
 }
@@ -259,7 +259,7 @@ footer {
         top: 0;
         right: 0;
         width: 100%;
-        background-color: rgba(14, 27, 49, 0.95);
+        background-color: rgba(5, 9, 15, 0.95);
         z-index: 999;
     }
     nav ul {
