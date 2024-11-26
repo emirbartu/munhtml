@@ -6,9 +6,12 @@ import {
   useColorModeValue,
   Badge,
   HStack,
+  Link,
+  Icon
 } from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
-export const CommitteeCard = ({ name, fullName, description }) => {
+export const CommitteeCard = ({ name, fullName, description, link }) => {
   const bgColor = useColorModeValue('white', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
   const gradientBg = useColorModeValue(
@@ -44,9 +47,21 @@ export const CommitteeCard = ({ name, fullName, description }) => {
         </HStack>
       </Box>
       <VStack p={6} spacing={4} align="start">
-        <Heading as="h4" size="md" color={useColorModeValue('gray.700', 'gray.200')}>
-          {fullName}
-        </Heading>
+        <HStack width="full" justify="space-between" align="center">
+          <Heading as="h4" size="md" color={useColorModeValue('gray.700', 'gray.200')}>
+            {fullName}
+          </Heading>
+          {link && (
+            <Link 
+              href={link} 
+              isExternal 
+              color={useColorModeValue('blue.500', 'blue.300')}
+              _hover={{ color: useColorModeValue('blue.600', 'blue.200') }}
+            >
+              Official Website <Icon as={ExternalLinkIcon} mx="2px" />
+            </Link>
+          )}
+        </HStack>
         <Text color={useColorModeValue('gray.600', 'gray.300')}>
           {description}
         </Text>
