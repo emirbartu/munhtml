@@ -1,20 +1,4 @@
-import { Box, Text, VStack, useColorModeValue, Container, SimpleGrid } from '@chakra-ui/react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
-
-// Fix for default marker icon in react-leaflet
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-});
-
-const defaultCenter = {
-  lat: 40.7128,  // Default to New York coordinates
-  lng: -74.0060,
-};
+import { Box, useColorModeValue, Container, SimpleGrid } from '@chakra-ui/react';
 
 export const Map = () => {
   const bgColor = useColorModeValue('white', 'gray.800');
@@ -33,22 +17,16 @@ export const Map = () => {
           h="400px"
           position="relative"
         >
-          <MapContainer
-            center={[defaultCenter.lat, defaultCenter.lng]}
-            zoom={13}
-            style={{ height: '100%', width: '100%' }}
-          >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            <Marker position={[defaultCenter.lat, defaultCenter.lng]}>
-              <Popup>
-                MUN Conference Venue<br />
-                123 MUN Street, Conference Center
-              </Popup>
-            </Marker>
-          </MapContainer>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1842268811736!2d-73.98570684945891!3d40.74841797922864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1645134827162!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="MUN Venue Location"
+          />
         </Box>
       </SimpleGrid>
     </Container>
