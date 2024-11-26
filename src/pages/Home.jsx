@@ -17,8 +17,22 @@ const Home = () => {
   );
 
   return (
-    <Container maxW="container.xl">
+    <Container maxW="container.xl" position="relative">
       {/* Hero Section */}
+      <Box
+        position="absolute"
+        top="0"
+        left="50%"
+        transform="translateX(-50%)"
+        width="100vw"
+        height="400px"
+        bgImage="url('/banner-bg.svg')"
+        bgSize="cover"
+        bgPosition="center"
+        filter="blur(8px)"
+        opacity="0.8"
+        zIndex="-1"
+      />
       <VStack spacing={8} py={{ base: 24, md: 32 }} textAlign="center">
         <Heading
           as="h1"
