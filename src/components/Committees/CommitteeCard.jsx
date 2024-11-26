@@ -12,7 +12,7 @@ import {
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 export const CommitteeCard = ({ name, fullName, description, link }) => {
-  const bgColor = useColorModeValue('white', 'gray.800');
+  const bgColor = useColorModeValue('gray.300', 'gray.700');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
   const gradientBg = useColorModeValue(
     'linear(to-br, pink.400, cyan.400)',
@@ -26,16 +26,17 @@ export const CommitteeCard = ({ name, fullName, description, link }) => {
       borderColor={borderColor}
       borderRadius="lg"
       overflow="hidden"
-      transition="transform 0.2s, box-shadow 0.2s"
+      transition="all 0.3s ease-in-out"
       _hover={{
         transform: 'translateY(-4px)',
-        boxShadow: 'xl'
+        boxShadow: 'xl',
+        bg: useColorModeValue('blue.100', 'blue.700')
       }}
     >
       <Box
-        bgGradient={gradientBg}
+        bg={useColorModeValue('gray.300', 'gray.700')}
         p={6}
-        color="white"
+        color={useColorModeValue('gray.800', 'white')}
       >
         <HStack spacing={4} align="center">
           <Heading as="h3" size="lg">
@@ -52,9 +53,9 @@ export const CommitteeCard = ({ name, fullName, description, link }) => {
             {fullName}
           </Heading>
           {link && (
-            <Link 
-              href={link} 
-              isExternal 
+            <Link
+              href={link}
+              isExternal
               color={useColorModeValue('blue.500', 'blue.300')}
               _hover={{ color: useColorModeValue('blue.600', 'blue.200') }}
             >
