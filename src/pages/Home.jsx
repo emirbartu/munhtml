@@ -6,10 +6,8 @@ import {
   Button,
   VStack,
   useColorModeValue,
-  SimpleGrid,
 } from '@chakra-ui/react';
-import { Map } from '../components/Venue/Map';
-import { Transport } from '../components/Venue/Transport';
+import { VenueSection } from '../components/Venue/VenueSection';
 import { CommitteeGrid } from '../components/Committees/CommitteeGrid';
 
 const Home = () => {
@@ -52,15 +50,7 @@ const Home = () => {
       </Box>
 
       {/* Venue Section */}
-      <Box py={{ base: 12, md: 16 }}>
-        <Heading as="h2" size="xl" textAlign="center" mb={12}>
-          Venue Information
-        </Heading>
-        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8}>
-          <Map />
-          <Transport />
-        </SimpleGrid>
-      </Box>
+      <VenueSection />
     </Container>
   );
 };
