@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Leaflet Map Styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Fix for Leaflet marker icon z-index */
+.leaflet-marker-icon {
+  z-index: 1000 !important;
+}
+
+/* Fix for Leaflet popup z-index */
+.leaflet-popup {
+  z-index: 1001 !important;
+}
+
+/* Fix for dark mode compatibility */
+.leaflet-tile {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+[data-theme="dark"] .leaflet-tile {
+  filter: brightness(0.6) contrast(1.2) invert(1) hue-rotate(180deg);
+}
+
+[data-theme="dark"] .leaflet-container {
+  background: #242424;
+}
