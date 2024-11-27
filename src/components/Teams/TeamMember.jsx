@@ -7,7 +7,7 @@ import {
   Heading,
 } from '@chakra-ui/react';
 
-export const TeamMember = ({ name, role, image, bio }) => {
+export const TeamMember = ({ name, role, image }) => {
   const bgColor = useColorModeValue('white', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
 
@@ -20,23 +20,33 @@ export const TeamMember = ({ name, role, image, bio }) => {
       overflow="hidden"
       transition="transform 0.2s"
       _hover={{ transform: 'translateY(-4px)' }}
+      height="100%"
     >
       <Image
         src={image}
         alt={name}
         objectFit="cover"
-        h="200px"
+        h={{ base: "200px", sm: "250px", md: "300px" }}
         w="100%"
       />
-      <VStack p={4} spacing={2} align="start">
-        <Heading as="h3" size="md">
+      <VStack
+        p={{ base: 3, md: 4 }}
+        spacing={{ base: 1, md: 2 }}
+        align="center"
+      >
+        <Heading
+          as="h3"
+          size={{ base: "sm", md: "md" }}
+          textAlign="center"
+        >
           {name}
         </Heading>
-        <Text color="blue.500" fontWeight="bold">
+        <Text
+          color="blue.500"
+          fontWeight="bold"
+          fontSize={{ base: "sm", md: "md" }}
+        >
           {role}
-        </Text>
-        <Text fontSize="sm">
-          {bio}
         </Text>
       </VStack>
     </Box>

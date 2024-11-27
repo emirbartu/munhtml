@@ -40,23 +40,30 @@ export const CommitteeCard = ({ name, fullName, description, route }) => {
     >
       <Box
         bg={useColorModeValue('gray.300', 'gray.700')}
-        p={6}
+        p={{ base: 4, md: 6 }}
         color={useColorModeValue('gray.800', 'white')}
       >
-        <HStack spacing={4} align="center">
-          <Heading as="h3" size="lg">
+        <HStack spacing={{ base: 2, md: 4 }} align="center" flexWrap="wrap">
+          <Heading as="h3" size={{ base: "md", md: "lg" }}>
             {name}
           </Heading>
-          <Badge colorScheme="whiteAlpha" fontSize="0.8em" px={2}>
+          <Badge colorScheme="whiteAlpha" fontSize={{ base: "0.7em", md: "0.8em" }} px={2}>
             UN Committee
           </Badge>
         </HStack>
       </Box>
-      <VStack p={6} spacing={4} align="start">
-        <Heading as="h4" size="md" color={useColorModeValue('gray.700', 'gray.200')}>
+      <VStack p={{ base: 4, md: 6 }} spacing={{ base: 2, md: 4 }} align="start">
+        <Heading
+          as="h4"
+          size={{ base: "sm", md: "md" }}
+          color={useColorModeValue('gray.700', 'gray.200')}
+        >
           {fullName}
         </Heading>
-        <Text color={useColorModeValue('gray.600', 'gray.300')}>
+        <Text
+          color={useColorModeValue('gray.600', 'gray.300')}
+          fontSize={{ base: "sm", md: "md" }}
+        >
           {description}
         </Text>
       </VStack>
