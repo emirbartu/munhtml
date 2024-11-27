@@ -6,12 +6,13 @@ import {
   useColorModeValue,
   Badge,
   HStack,
-  Link,
+  Link as ChakraLink,
   Icon
 } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
-export const CommitteeCard = ({ name, fullName, description, link }) => {
+export const CommitteeCard = ({ name, fullName, description, route }) => {
   const bgColor = useColorModeValue('gray.300', 'gray.700');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
   const gradientBg = useColorModeValue(
@@ -21,15 +22,19 @@ export const CommitteeCard = ({ name, fullName, description, link }) => {
 
   return (
     <Box
+      as={RouterLink}
+      to={route}
       bg={bgColor}
       borderWidth="1px"
       borderColor={borderColor}
-      borderRadius="lg"
+      borderTopRadius="none"
+      borderBottomRadius="lg"
       overflow="hidden"
       transition="all 0.3s ease-in-out"
       _hover={{
         transform: 'translateY(-4px)',
         boxShadow: 'xl',
+        textDecoration: 'none',
         bg: useColorModeValue('blue.100', 'blue.700')
       }}
     >
@@ -48,21 +53,9 @@ export const CommitteeCard = ({ name, fullName, description, link }) => {
         </HStack>
       </Box>
       <VStack p={6} spacing={4} align="start">
-        <HStack width="full" justify="space-between" align="center">
-          <Heading as="h4" size="md" color={useColorModeValue('gray.700', 'gray.200')}>
-            {fullName}
-          </Heading>
-          {link && (
-            <Link
-              href={link}
-              isExternal
-              color={useColorModeValue('blue.500', 'blue.300')}
-              _hover={{ color: useColorModeValue('blue.600', 'blue.200') }}
-            >
-              Official Website <Icon as={ExternalLinkIcon} mx="2px" />
-            </Link>
-          )}
-        </HStack>
+        <Heading as="h4" size="md" color={useColorModeValue('gray.700', 'gray.200')}>
+          {fullName}
+        </Heading>
         <Text color={useColorModeValue('gray.600', 'gray.300')}>
           {description}
         </Text>
