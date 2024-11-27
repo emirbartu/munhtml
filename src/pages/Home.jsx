@@ -7,11 +7,14 @@ import {
   VStack,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 import { VenueSection } from '../components/Venue/VenueSection';
 import { CommitteeGrid } from '../components/Committees/CommitteeGrid';
 import ScheduleSection from '../components/Schedule/Schedule';
+import CountdownTimer from '../components/Countdown/CountdownTimer';
 
 const Home = () => {
+  const navigate = useNavigate();
   const gradientText = useColorModeValue(
     'linear(to-r, pink.400, cyan.400)',
     'linear(to-r, pink.500, cyan.500)'
@@ -42,14 +45,28 @@ const Home = () => {
           bgClip="text"
           color={'white'}
         >
-        YAFLMUN '25
-
+          YAFLMUN '25
         </Heading>
-        <Text fontSize="xl" maxW="container.md">
+        <Button
+          colorScheme="teal"
+          size="lg"
+          onClick={() => navigate('/apply')}
+          _hover={{
+            transform: 'translateY(-2px)',
+            boxShadow: 'lg',
+          }}
+          transition="all 0.2s"
+        >
+          Apply Now
+        </Button>
+        <Text fontSize="xl" maxW="container.md" color="white">
           Your gateway to an exceptional Model United Nations experience.
           Join us in shaping the future of international diplomacy.
         </Text>
       </VStack>
+
+      {/* Countdown Timer */}
+      <CountdownTimer />
 
       {/* Committees Section */}
       <Box py={{ base: 12, md: 16 }}>
