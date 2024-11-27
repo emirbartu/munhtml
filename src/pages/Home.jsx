@@ -12,6 +12,7 @@ import { VenueSection } from '../components/Venue/VenueSection';
 import { CommitteeGrid } from '../components/Committees/CommitteeGrid';
 import ScheduleSection from '../components/Schedule/Schedule';
 import CountdownTimer from '../components/Countdown/CountdownTimer';
+import FAQSection from '../components/FAQ/FAQSection';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -81,6 +82,9 @@ const Home = () => {
 
       {/* Venue Section */}
       <VenueSection />
+
+      {/* FAQ Section */}
+      <FAQSection />
     </Container>
   );
 };
