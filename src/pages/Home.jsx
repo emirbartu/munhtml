@@ -27,10 +27,11 @@ const Home = () => {
         transform="translateX(-50%)"
         width="100vw"
         height="400px"
-        bgImage="url('/banner-bg.svg')"
+        bgImage="src/assets/thumbnail/banner.jpg"
         bgSize="cover"
         bgPosition="center"
-        filter="blur(8px)"
+        backgroundRepeat={0}
+        filter="blur(2px)"
         opacity="0.8"
         zIndex="-1"
       />
@@ -38,22 +39,16 @@ const Home = () => {
         <Heading
           as="h1"
           size="2xl"
-          bgGradient={gradientText}
           bgClip="text"
+          color={'white'}
         >
-          MUN TEMPLATE
+        YAFLMUN '25
+
         </Heading>
         <Text fontSize="xl" maxW="container.md">
           Your gateway to an exceptional Model United Nations experience.
           Join us in shaping the future of international diplomacy.
         </Text>
-        <Button
-          size="lg"
-          colorScheme="blue"
-          _hover={{ transform: 'translateY(-2px)' }}
-        >
-          Download Resources
-        </Button>
       </VStack>
 
       {/* Committees Section */}

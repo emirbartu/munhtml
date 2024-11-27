@@ -57,7 +57,7 @@ const Header = () => {
 
         <HStack spacing={8} alignItems="center">
           <Box as={RouterLink} to="/" fontSize="xl" fontWeight="bold">
-            MUN TEMPLATE
+            YAFLMUN 25'
           </Box>
           <HStack
             as="nav"
@@ -69,10 +69,15 @@ const Header = () => {
                 Committees
               </MenuButton>
               <MenuList bg={menuBg} borderColor={borderColor}>
-                <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>DISEC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/unsc" _hover={{ bg: menuHoverBg }}>UNSC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/ecosoc" _hover={{ bg: menuHoverBg }}>ECOSOC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/unhrc" _hover={{ bg: menuHoverBg }}>UNHRC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>GA1-DISEC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }}>GA4-SPECPOL</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }}>HCC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }}>ILO</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }}>JCC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }}>OTS</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }}>Reconquista of Spain</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }}>F-UNSC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }}>FIA</MenuItem>
               </MenuList>
             </Menu>
             <Button as={RouterLink} to="/teams" variant="ghost">
@@ -116,10 +121,15 @@ const Header = () => {
             Committees
           </MenuButton>
           <MenuList bg={menuBg} borderColor={borderColor}>
-            <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>DISEC</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/unsc" _hover={{ bg: menuHoverBg }}>UNSC</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/ecosoc" _hover={{ bg: menuHoverBg }}>ECOSOC</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/unhrc" _hover={{ bg: menuHoverBg }}>UNHRC</MenuItem>
+            <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>GA1-DISEC</MenuItem>
+            <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }}>GA4-SPECPOL</MenuItem>
+            <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }}>HCC</MenuItem>
+            <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }}>ILO</MenuItem>
+            <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }}>JCC</MenuItem>
+            <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }}>OTS</MenuItem>
+            <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }}>Reconquista of Spain</MenuItem>
+            <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }}>F-UNSC</MenuItem>
+            <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }}>FIA</MenuItem>
           </MenuList>
         </Menu>
       </Stack>
