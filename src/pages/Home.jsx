@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { VenueSection } from '../components/Venue/VenueSection';
 import { CommitteeGrid } from '../components/Committees/CommitteeGrid';
+import ScheduleSection from '../components/Schedule/Schedule';
 
 const Home = () => {
   const gradientText = useColorModeValue(
@@ -62,6 +63,9 @@ const Home = () => {
         </Heading>
         <CommitteeGrid />
       </Box>
+
+      {/* Schedule Section */}
+      <ScheduleSection />
 
       {/* Venue Section */}
       <VenueSection />

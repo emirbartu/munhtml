@@ -5,6 +5,7 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import Teams from './pages/Teams';
 import Committees from './pages/Committees';
+import UNHRCPage from './pages/committees/UNHRC';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/committees" element={<Committees />} />
+            <Route path="/committees/unhrc" element={<UNHRCPage />} />
           </Routes>
         </Layout>
       </BrowserRouter>
