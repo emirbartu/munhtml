@@ -14,7 +14,7 @@ import ILOPage from './pages/Committees/ILO';
 import JCCPage from './pages/Committees/JCC';
 import OTSPage from './pages/Committees/OTS';
 import CrisisPage from './pages/Committees/crisis';
-import UNHRCPage from './pages/committees/UNHRC';
+import UNHRCPage from './pages/Committees/UNHRC';
 function App() {
   return (
     <ChakraProvider theme={theme}>
