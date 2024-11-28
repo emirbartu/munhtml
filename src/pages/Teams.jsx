@@ -2,15 +2,16 @@ import {
   Box,
   Container,
   Heading,
-  SimpleGrid,
   useColorModeValue,
   Button,
   VStack,
   HStack,
 } from '@chakra-ui/react';
 import { TeamGrid } from '../components/Teams/TeamGrid';
+import { useState } from 'react';
 
 const Teams = () => {
+  const [activeTeam, setActiveTeam] = useState('academy');
   const bgColor = useColorModeValue('gray.50', 'gray.900');
 
   return (
@@ -20,11 +21,23 @@ const Teams = () => {
           Our Teams
         </Heading>
         <VStack spacing={8}>
-          <TeamGrid />
-          <HStack spacing={4}>
-            <Button size="lg" colorScheme="teal">Academy Team</Button>
-            <Button size="lg" colorScheme="blue">Organization Team</Button>
+          <HStack spacing={4} mb={8}>
+            <Button
+              size="lg"
+              colorScheme={activeTeam === 'academy' ? 'teal' : 'gray'}
+              onClick={() => setActiveTeam('academy')}
+            >
+              Academy Team
+            </Button>
+            <Button
+              size="lg"
+              colorScheme={activeTeam === 'organization' ? 'teal' : 'gray'}
+              onClick={() => setActiveTeam('organization')}
+            >
+              Organization Team
+            </Button>
           </HStack>
+          <TeamGrid activeTeam={activeTeam} />
         </VStack>
       </Container>
     </Box>

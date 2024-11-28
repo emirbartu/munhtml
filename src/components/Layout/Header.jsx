@@ -15,10 +15,12 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onToggle } = useDisclosure();
+  const { isOpen: isMenuOpen, onOpen: onMenuOpen, onClose: onMenuClose } = useDisclosure();
 
   const bgColor = useColorModeValue('white', 'gray.800');
   const textColor = useColorModeValue('gray.800', 'white');
@@ -64,23 +66,49 @@ const Header = () => {
             spacing={4}
             display={{ base: 'none', md: 'flex' }}
           >
-            <Menu>
-              <MenuButton as={Button} rightIcon={<ChevronDownIcon />} variant="ghost">
-                Committees
-              </MenuButton>
-              <MenuList bg={menuBg} borderColor={borderColor}>
-                <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>GA1-DISEC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }}>GA4-SPECPOL</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }}>ILO</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }}>F-UNSC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }}>OTS</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/uefa" _hover={{ bg: menuHoverBg }}>UEFA</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }}>FIA</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }}>JCC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }}>HCC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }}>Reconquista of Spain</MenuItem>
-              </MenuList>
-            </Menu>
+            <ScrollLink to="hero" smooth={true} duration={500} spy={true}>
+              <Button variant="ghost">Home</Button>
+            </ScrollLink>
+            <Box
+              position="relative"
+              onMouseEnter={onMenuOpen}
+              onMouseLeave={onMenuClose}
+            >
+              <Menu isOpen={isMenuOpen} isLazy placement="bottom">
+                <MenuButton
+                  as={Button}
+                  variant="ghost"
+                  rightIcon={<ChevronDownIcon />}
+                  onClick={() => {
+                    const element = document.getElementById('committees');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                >
+                  Committees
+                </MenuButton>
+                <MenuList
+                  bg={menuBg}
+                  borderColor={borderColor}
+                  zIndex={1001}
+                >
+                  <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>DISEC</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/unsc" _hover={{ bg: menuHoverBg }}>UNSC</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/ecosoc" _hover={{ bg: menuHoverBg }}>ECOSOC</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/unhrc" _hover={{ bg: menuHoverBg }}>UNHRC</MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
+            <Button as={RouterLink} to="/#schedule" variant="ghost">
+              Schedule
+            </Button>
+            <ScrollLink to="venue" smooth={true} duration={500} spy={true}>
+              <Button variant="ghost">Venue</Button>
+            </ScrollLink>
+            <ScrollLink to="faq" smooth={true} duration={500} spy={true}>
+              <Button variant="ghost">FAQ</Button>
+            </ScrollLink>
             <Button as={RouterLink} to="/teams" variant="ghost">
               Teams
             </Button>
@@ -103,37 +131,60 @@ const Header = () => {
         borderTop="1px"
         borderColor={borderColor}
       >
+        <ScrollLink to="hero" smooth={true} duration={500} spy={true}>
+          <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }}>Home</Button>
+        </ScrollLink>
+        <Box
+          position="relative"
+          onMouseEnter={onMenuOpen}
+          onMouseLeave={onMenuClose}
+        >
+          <Menu isOpen={isMenuOpen} isLazy placement="bottom">
+            <MenuButton
+              as={Button}
+              variant="ghost"
+              w="100%"
+              rightIcon={<ChevronDownIcon />}
+              _hover={{ bg: menuHoverBg }}
+              onClick={() => {
+                const element = document.getElementById('committees');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
+              Committees
+            </MenuButton>
+            <MenuList
+              bg={menuBg}
+              borderColor={borderColor}
+              zIndex={1001}
+            >
+              <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>DISEC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/unsc" _hover={{ bg: menuHoverBg }}>UNSC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/ecosoc" _hover={{ bg: menuHoverBg }}>ECOSOC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/unhrc" _hover={{ bg: menuHoverBg }}>UNHRC</MenuItem>
+            </MenuList>
+          </Menu>
+        </Box>
+        <Button as={RouterLink} to="/#schedule" variant="ghost" w="100%" _hover={{ bg: menuHoverBg }}>
+          Schedule
+        </Button>
+        <ScrollLink to="venue" smooth={true} duration={500} spy={true}>
+          <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }}>Venue</Button>
+        </ScrollLink>
+        <ScrollLink to="faq" smooth={true} duration={500} spy={true}>
+          <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }}>FAQ</Button>
+        </ScrollLink>
         <Button
           as={RouterLink}
           to="/teams"
           variant="ghost"
+          w="100%"
           _hover={{ bg: menuHoverBg }}
         >
           Teams
         </Button>
-        <Menu>
-          <MenuButton
-            as={Button}
-            rightIcon={<ChevronDownIcon />}
-            variant="ghost"
-            w="100%"
-            _hover={{ bg: menuHoverBg }}
-          >
-            Committees
-          </MenuButton>
-          <MenuList bg={menuBg} borderColor={borderColor}>
-            <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>GA1-DISEC</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }}>GA4-SPECPOL</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }}>ILO</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }}>F-UNSC</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }}>OTS</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/uefa" _hover={{ bg: menuHoverBg }}>UEFA</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }}>FIA</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }}>JCC</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }}>HCC</MenuItem>
-            <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }}>Reconquista of Spain</MenuItem>
-          </MenuList>
-        </Menu>
       </Stack>
     </Box>
   );
