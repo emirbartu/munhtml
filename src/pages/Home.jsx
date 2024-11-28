@@ -10,6 +10,8 @@ import {
 import { VenueSection } from '../components/Venue/VenueSection';
 import { CommitteeGrid } from '../components/Committees/CommitteeGrid';
 import ScheduleSection from '../components/Schedule/Schedule';
+import CountdownTimer from '../components/Countdown/CountdownTimer';
+import FAQSection from '../components/FAQ/FAQSection';
 
 const Home = () => {
   const gradientText = useColorModeValue(
@@ -45,6 +47,7 @@ const Home = () => {
         YAFLMUN'25
 
         </Heading>
+        <CountdownTimer />
         <Text fontSize="xl" maxW="container.md">
           Your gateway to an exceptional Model United Nations experience.
           Join us in shaping the future of international diplomacy.
@@ -58,6 +61,9 @@ const Home = () => {
         </Heading>
         <CommitteeGrid />
       </Box>
+
+      {/* FAQ Section */}
+      <FAQSection />
 
       {/* Schedule Section */}
       <ScheduleSection />
