@@ -7,9 +7,10 @@ import {
   Heading,
 } from '@chakra-ui/react';
 
-export const TeamMember = ({ name, role, image, bio }) => {
+export const TeamMember = ({ name, role, image }) => {
   const bgColor = useColorModeValue('white', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
+  const textColor = useColorModeValue('gray.800', 'white');
 
   return (
     <Box
@@ -25,18 +26,16 @@ export const TeamMember = ({ name, role, image, bio }) => {
         src={image}
         alt={name}
         objectFit="cover"
-        h="200px"
+        h="300px"
         w="100%"
+        fallback={<Box h="300px" w="100%" bg="gray.200" />}
       />
-      <VStack p={4} spacing={2} align="start">
-        <Heading as="h3" size="md">
+      <VStack p={4} spacing={2} align="center">
+        <Heading as="h3" size="md" textAlign="center" color={textColor}>
           {name}
         </Heading>
-        <Text color="blue.500" fontWeight="bold">
+        <Text color="blue.500" fontWeight="bold" textAlign="center">
           {role}
-        </Text>
-        <Text fontSize="sm">
-          {bio}
         </Text>
       </VStack>
     </Box>

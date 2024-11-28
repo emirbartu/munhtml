@@ -15,6 +15,8 @@ import JCCPage from './pages/Committees/JCC';
 import OTSPage from './pages/Committees/OTS';
 import CrisisPage from './pages/Committees/crisis';
 import UNHRCPage from './pages/Committees/UNHRC';
+import Apply from './pages/Apply';
+
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -34,7 +36,7 @@ function App() {
             <Route path="/committees/jcc" element={<JCCPage />} />
             <Route path="/committees/ots" element={<OTSPage />} />
             <Route path="/committees/crisis" element={<CrisisPage />} />
-
+            <Route path="/apply" element={<Apply />} />
           </Routes>
         </Layout>
       </BrowserRouter>

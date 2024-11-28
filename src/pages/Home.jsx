@@ -7,11 +7,13 @@ import {
   VStack,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 import { VenueSection } from '../components/Venue/VenueSection';
 import { CommitteeGrid } from '../components/Committees/CommitteeGrid';
 import ScheduleSection from '../components/Schedule/Schedule';
 import CountdownTimer from '../components/Countdown/CountdownTimer';
 import FAQSection from '../components/FAQ/FAQSection';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Home = () => {
   const gradientText = useColorModeValue(
@@ -23,6 +25,7 @@ const Home = () => {
     <Container maxW="container.xl" position="relative">
       {/* Hero Section */}
       <Box
+        id="hero"
         position="absolute"
         top="0"
         left="50%"
@@ -37,7 +40,7 @@ const Home = () => {
         opacity="0.8"
         zIndex="-1"
       />
-      <VStack spacing={8} py={{ base: 24, md: 32 }} textAlign="center">
+      <VStack id="welcome" spacing={8} py={{ base: 24, md: 32 }} textAlign="center">
         <Heading
           as="h1"
           size="2xl"
@@ -48,6 +51,9 @@ const Home = () => {
 
         </Heading>
         <CountdownTimer />
+        <Button as={RouterLink} to="/apply" size="lg" colorScheme="blue">
+          Apply Now
+        </Button>
         <Text fontSize="xl" maxW="container.md">
         <Box
           p={8}
@@ -69,7 +75,7 @@ HAKKI YILMAZER, AHMET İSHAK YILMAZ
       </VStack>
 
       {/* Committees Section */}
-      <Box py={{ base: 12, md: 16 }}>
+      <Box id="committees" py={{ base: 12, md: 16 }}>
         <Heading as="h2" size="xl" textAlign="center" mb={12}>
           Committees
         </Heading>
@@ -77,13 +83,19 @@ HAKKI YILMAZER, AHMET İSHAK YILMAZ
       </Box>
 
       {/* FAQ Section */}
-      <FAQSection />
+      <Box id="faq">
+        <FAQSection />
+      </Box>
 
       {/* Schedule Section */}
-      <ScheduleSection />
+      <Box id="schedule">
+        <ScheduleSection />
+      </Box>
 
       {/* Venue Section */}
-      <VenueSection />
+      <Box id="venue">
+        <VenueSection />
+      </Box>
     </Container>
   );
 };

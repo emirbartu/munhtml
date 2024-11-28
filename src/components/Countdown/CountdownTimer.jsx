@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   Box,
   Text,
@@ -8,23 +8,32 @@ import {
 } from '@chakra-ui/react';
 
 const CountdownTimer = () => {
-  const calculateTimeLeft = () => {
-    const difference = +new Date('2025-01-21') - +new Date();
-    let timeLeft = {};
+  // Define target date as a constant to ensure consistency
+  const TARGET_DATE = useMemo(() => new Date('2025-01-21T00:00:00Z'), []);
 
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 * 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+  const calculateTimeLeft = () => {
+    const now = new Date();
+    // Ensure consistent timezone handling by using UTC
+    const difference = TARGET_DATE.getTime() - now.getTime();
+
+    if (difference <= 0) {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
       };
     }
 
-    return timeLeft;
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
 
   useEffect(() => {
     const timer = setInterval(() => {
