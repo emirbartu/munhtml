@@ -7,17 +7,13 @@ import {
   Badge,
   HStack,
   Link,
-  Icon
+  Icon,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
-export const CommitteeCard = ({ name, fullName, description, link }) => {
+export const CommitteeCard = ({ name, fullName, description, link, image }) => {
   const bgColor = useColorModeValue('gray.300', 'gray.700');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
-  const gradientBg = useColorModeValue(
-    'linear(to-br, pink.400, cyan.400)',
-    'linear(to-br, pink.600, cyan.600)'
-  );
 
   return (
     <Box
@@ -27,16 +23,28 @@ export const CommitteeCard = ({ name, fullName, description, link }) => {
       borderRadius="lg"
       overflow="hidden"
       transition="all 0.3s ease-in-out"
+      position="relative"
       _hover={{
         transform: 'translateY(-4px)',
         boxShadow: 'xl',
-        bg: useColorModeValue('blue.100', 'blue.700')
       }}
     >
+      {/* Background Image */}
       <Box
-        bg={useColorModeValue('gray.300', 'gray.700')}
+        bgImage={`url(${image})`}
+        bgSize="cover"
+        bgPosition="center"
+        filter="grayscale(100%)"
+        transition="filter 0.3s ease-in-out"
+        _hover={{ filter: 'grayscale(0%)' }}
+        height="200px"
+      ></Box>
+
+      {/* Card Content */}
+      <Box
         p={6}
         color={useColorModeValue('gray.800', 'white')}
+        bg={useColorModeValue('gray.300', 'gray.700')}
       >
         <HStack spacing={4} align="center">
           <Heading as="h3" size="lg">
