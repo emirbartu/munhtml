@@ -69,7 +69,7 @@ export const Transport = () => {
           <Heading size="sm" mb={4}>Location Details:</Heading>
           <Box display="flex" alignItems="center">
             <Icon as={MdLocationOn} color={iconColor} boxSize={6} mr={2} />
-            <Text>123 MUN Street, Conference Center<br />City, State 12345</Text>
+            <Text>Halkalı Merkez, Halkalı, 34303 <br />Küçükçekmece/İstanbul</Text>
           </Box>
         </Box>
       </VStack>

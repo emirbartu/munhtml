@@ -66,18 +66,8 @@ const Footer = () => {
             <Heading as="h3" size="sm" mb={2}>Follow Us</Heading>
             <Stack direction={'row'} spacing={4}>
               <SocialButton
-                label={'Facebook'}
-                href={'https://facebook.com/templatemun'}
-                icon={<FaFacebook />}
-              />
-              <SocialButton
-                label={'Twitter'}
-                href={'https://twitter.com/templatemun'}
-                icon={<FaTwitter />}
-              />
-              <SocialButton
                 label={'Instagram'}
-                href={'https://instagram.com/templatemun'}
+                href={'https://www.instagram.com/yafl.mun25/'}
                 icon={<FaInstagram />}
               />
               <SocialButton

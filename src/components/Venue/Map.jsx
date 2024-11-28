@@ -18,7 +18,7 @@ export const Map = () => {
           position="relative"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1842268811736!2d-73.98570684945891!3d40.74841797922864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1645134827162!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2128.1593010929673!2d28.788423288423424!3d41.032436938082746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa438a39f52db%3A0xa4eb20ddc406fa96!2s%C4%B0stanbul%20Sabahattin%20Zaim%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1732816606316!5m2!1str!2str"
             width="100%"
             height="100%"
             style={{ border: 0 }}
