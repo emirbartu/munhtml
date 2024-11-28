@@ -45,13 +45,19 @@ export const Transport = () => {
             <ListItem>
               <Box display="flex" alignItems="center">
                 <ListIcon as={MdDirectionsBus} color={iconColor} boxSize={6} />
-                <Text>Bus lines: 123, 456, 789 <Text as="span" fontWeight="bold">(Stop: Central Station)</Text></Text>
+                <Text>Bus Lines: 36AS, 76O, 89, 89A, 89F, 89K, 89S, 98, 98KM, 98AB,  HT20, BN1. <Text as="span" fontWeight="bold">(Stop: Central Station)</Text></Text>
+              </Box>
+            </ListItem>
+            <ListItem>
+              <Box display="flex" alignItems="center">
+                <ListIcon as={MdDirectionsBus} color={iconColor} boxSize={6} />
+                <Text>Metrobus -- 89, 89K, 89S, 98, 98AB, HT20 <Text as="span" fontWeight="bold">(5 min walk)</Text></Text>
               </Box>
             </ListItem>
             <ListItem>
               <Box display="flex" alignItems="center">
                 <ListIcon as={MdTrain} color={iconColor} boxSize={6} />
-                <Text>Subway: Blue Line, Station XYZ <Text as="span" fontWeight="bold">(5 min walk)</Text></Text>
+                <Text>Subway: Marmaray -- BN1 <Text as="span" fontWeight="bold">(5 min walk)</Text></Text>
               </Box>
             </ListItem>
             <ListItem>

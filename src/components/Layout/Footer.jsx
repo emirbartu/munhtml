@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Container,
@@ -8,7 +9,8 @@ import {
   IconButton,
   Heading,
 } from '@chakra-ui/react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
+
 
 const SocialButton = ({ icon, label, href }) => {
   return (
@@ -36,8 +38,21 @@ const SocialButton = ({ icon, label, href }) => {
 };
 
 const Footer = () => {
+  const [creatorText, setCreatorText] = useState('YAFLMUN Head of IT Team');
   const bgColor = useColorModeValue('gray.50', 'gray.900');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCreatorText(prevText => 
+        prevText === 'YAFLMUN Head of IT Team' 
+          ? 'Emir Bartu Ekinci' 
+          : 'YAFLMUN Head of IT Team'
+      );
+    }, 2000);
+  
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <Box
@@ -51,15 +66,13 @@ const Footer = () => {
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8}>
           <Stack align={'flex-start'}>
             <Heading as="h3" size="sm" mb={2}>Contact Us</Heading>
-            <Text>Email: contact@templatemun.com</Text>
-            <Text>Phone: +1 234 567 8900</Text>
+            <a href="mailto:yaflmunhr@gmail.com">yaflmunhr@gmail.com</a>
           </Stack>
 
           <Stack align={'flex-start'}>
             <Heading as="h3" size="sm" mb={2}>Address</Heading>
-            <Text>123 MUN Street</Text>
-            <Text>Conference Center</Text>
-            <Text>City, State 12345</Text>
+            <Text>Halkalı Merkez, Halkalı, 34303  </Text>
+            <Text>Küçükçekmece/İstanbul</Text>
           </Stack>
 
           <Stack align={'flex-start'}>
@@ -80,7 +93,7 @@ const Footer = () => {
         </SimpleGrid>
 
         <Text pt={8} fontSize={'sm'} textAlign={'center'}>
-          Created by Template MUN Team © {new Date().getFullYear()}
+          Created by {creatorText}
         </Text>
       </Container>
     </Box>
