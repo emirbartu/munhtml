@@ -57,7 +57,7 @@ const Header = () => {
 
         <HStack spacing={8} alignItems="center">
           <Box as={RouterLink} to="/" fontSize="xl" fontWeight="bold">
-            YAFLMUN 25'
+            YAFLMUN'25
           </Box>
           <HStack
             as="nav"

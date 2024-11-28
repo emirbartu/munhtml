@@ -50,7 +50,7 @@ const CountdownTimer = () => {
       mx="auto"
     >
       <Text fontSize="2xl" mb={4} color={textColor} fontWeight="bold">
-        Countdown to YAFLMUN '25
+        Countdown to YAFLMUN'25
       </Text>
       <HStack spacing={8} justify="center" flexWrap="wrap">
         {Object.entries(timeLeft).map(([interval, value]) => (

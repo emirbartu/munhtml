@@ -42,7 +42,7 @@ const Home = () => {
           bgClip="text"
           color={'white'}
         >
-        YAFLMUN '25
+        YAFLMUN'25
 
         </Heading>
         <Text fontSize="xl" maxW="container.md">
