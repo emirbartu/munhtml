@@ -19,8 +19,8 @@ const SPECPOLPage = () => {
       title: 'Under-Secretary-General'
     },
     agendaItems: [
-      'Para kazanma falan',
-      'Sonbahar yaprakları yakın zamanda altından daha mı değerli olacak'
+      "Agenda 1: Examining the effects of political corruption on decolonization and nation-building",
+      "Agenda 2: Addressing political instability in post colonial states: the role of external powers"
     ],
     studyGuideUrl: '/study-guides/unhrc-2024.pdf',
     description: "SPECPOL, or the Special Political and Decolonization Committee, is a part of the UN General Assembly that focuses on political issues like decolonization, peacekeeping, and human rights. It also handles topics like refugee crises, outer space policies, and the peaceful use of atomic energy. Fundamentally , it works on finding solutions to global challenges that don’t fall under other committees, often focusing on helping countries to achieve stability."

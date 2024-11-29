@@ -83,6 +83,7 @@ export const TeamGrid = ({ activeTeam = 'academy' }) => {
             name={member.name || member.role}
             role={member.name ? member.role : ''}
             image={member.image}
+            link={member.name === "Hakkı Yılmaz Yılmazer" ? "https://youtu.be/KALvrIuZ3yM" : undefined}
           />
         ))}
       </SimpleGrid>

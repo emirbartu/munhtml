@@ -13,7 +13,6 @@ import { CommitteeGrid } from '../components/Committees/CommitteeGrid';
 import ScheduleSection from '../components/Schedule/Schedule';
 import CountdownTimer from '../components/Countdown/CountdownTimer';
 import FAQSection from '../components/FAQ/FAQSection';
-import { Link as ScrollLink } from 'react-scroll';
 
 const Home = () => {
   const gradientText = useColorModeValue(

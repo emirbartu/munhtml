@@ -85,7 +85,7 @@ const ScheduleSection = () => {
             mb={6}
             color={gradientTextColor}
           >
-            Conference Days
+            Schedule
           </Heading>
 
           <SimpleGrid columns={{ base: 1, md: 12 }} spacing={8}>

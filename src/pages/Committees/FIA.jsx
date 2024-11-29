@@ -19,8 +19,7 @@ const FIAPage = () => {
       title: 'Under-Secretary-General'
     },
     agendaItems: [
-      'Para kazanma falan',
-      'Sonbahar yaprakları yakın zamanda altından daha mı değerli olacak'
+      "Agenda: Crashgate Scandal"
     ],
     studyGuideUrl: '/study-guides/unhrc-2024.pdf',
     description: " The FIA, or Fédération Internationale de l'Automobile, is the governing body for world motor sport and the federation of the world's leading motoring organizations, dedicated to ensuring safety, sustainability, and fair competition in automotive and motorsport activities globally. In this committee the delegates will each represent a council member in the year 2008- the year one of the biggest Formula 1 scandals, the Crashgate Scandal took place. They will each have different secrets they want to keep buried while investigating and discussing the scandal. Will you be able to keep your dirty works secret or will you be exposed to the whole world? What about the investigation? What measures are going to be taken?"

@@ -18,24 +18,40 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: 'What is YAFLMUN?',
-      answer: 'YAFLMUN (YAFL Model United Nations) is an annual conference that simulates United Nations committees and international organizations. It provides students with an opportunity to develop their diplomatic, public speaking, and problem-solving skills while addressing global issues.',
+        question: 'What is the procedure of YAFLMUN’25?',
+        answer: 'YAFLMUN’25 will follow the Harvard Procedure.',
     },
     {
-      question: 'Who can participate in YAFLMUN?',
-      answer: 'YAFLMUN is open to high school students from all around the world. Whether you\'re a beginner or an experienced MUN delegate, we welcome all students who are passionate about international relations and diplomacy.',
+        question: 'Where will the conference be held?',
+        answer: 'The conference will take place at Istanbul Zaim University.',
     },
     {
-      question: 'How can I apply to YAFLMUN?',
-      answer: 'You can apply by clicking the "Apply Now" button at the top of our website. The application process includes filling out a registration form and selecting your preferred committees. Early applications are encouraged as spots fill up quickly.',
+        question: 'When will the conference be held?',
+        answer: 'The conference will be held in January, 21-24, 2025.',
     },
     {
-      question: 'What committees are available?',
-      answer: 'YAFLMUN offers a diverse range of committees including DISEC, UNSC, ILO, and UNHRC. Each committee focuses on specific global issues and provides unique opportunities for debate and resolution drafting.',
+        question: 'Do you provide accommodation?',
+        answer: 'No, unfortunately we do not.',
     },
     {
-      question: 'Is there a participation fee?',
-      answer: 'Yes, there is a registration fee that covers conference materials, venue costs, and refreshments during the conference. Early bird registration discounts are available. Please contact us for specific fee information.',
+        question: 'Is attending all sessions mandatory?',
+        answer: 'Yes, you have to attend all the sessions. If you miss 2 sessions, you will not be able to have an award. If you miss 3 sessions, you will not be given a certificate.',
+    },
+    {
+        question: 'Are there any options for different types of eating habits (vegan, vegetarian, etc.)?',
+        answer: 'We have already asked you about your eating habits in the application forms. If you have a different type of food choice, we expect you to mention it in the application form and contact us via the given email or phone numbers.',
+    },
+    {
+        question: 'I am a university student. Can I still apply for this conference?',
+        answer: 'Yes, all university students are welcomed at our conference.',
+    },
+    {
+        question: 'What is the dress code of YAFLMUN’25?',
+        answer: 'Our dress code is Western Business Attire. Male participants are required to wear a jacket during GSL speeches, and ties or bow ties are mandatory for them.',
+    },
+    {
+        question: 'Which committees are you suggesting for first timers?',
+        answer: 'First timers should apply for one of the two GA committees. They are: GA1: DISEC, GA3: SOCHUM.',
     },
   ];
 

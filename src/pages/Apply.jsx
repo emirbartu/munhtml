@@ -75,11 +75,11 @@ const Apply = () => {
   const applyOptions = [
     {
       icon: MdGavel,
-      title: 'Board',
+      title: 'Chair Board',
       early: '550₺',
       regular: '600₺',
       late: '700₺',
-      formLink: '#' // TODO: Add actual Google Form link
+      formLink: 'https://forms.gle/3C8s1dcQ14mc2xxw7'
     },
     {
       icon: MdGroup,
@@ -87,7 +87,7 @@ const Apply = () => {
       early: '700₺',
       regular: '750₺',
       late: '850₺',
-      formLink: '#'
+      formLink: 'https://forms.gle/n7PU5imu8GedJ2Cs9'
     },
     {
       icon: MdPerson,
@@ -95,7 +95,7 @@ const Apply = () => {
       early: '750₺',
       regular: '800₺',
       late: '900₺',
-      formLink: '#'
+      formLink: 'https://forms.gle/UcvYqy3UNaBqzB9YA'
     },
     {
       icon: MdLanguage,
@@ -111,7 +111,7 @@ const Apply = () => {
       early: '450₺',
       regular: '500₺',
       late: '550₺',
-      formLink: '#'
+      formLink: 'https://forms.gle/mH36uw8ZwxEqQVC1A'
     },
     {
       icon: PiPackageThin,
@@ -119,7 +119,7 @@ const Apply = () => {
       early: '450₺',
       regular: '500₺',
       late: '550₺',
-      formLink: '#'
+      formLink: 'https://forms.gle/H6ZYvrZe79XF4ERh7'
     }
   ];
 

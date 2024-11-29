@@ -14,7 +14,8 @@ export const Map = () => {
           borderWidth="1px"
           borderColor={borderColor}
           bg={bgColor}
-          h="400px"
+          h="300px"
+          w="300px"
           position="relative"
         >
           <iframe
@@ -25,7 +26,7 @@ export const Map = () => {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="MUN Venue Location"
+            title="YAFLMUN Venue Location"
           />
         </Box>
       </SimpleGrid>

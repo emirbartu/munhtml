@@ -3,34 +3,57 @@ import { CommitteeCard } from './CommitteeCard';
 
 const committees = [
   {
-    name: 'DISEC',
-    fullName: 'Disarmament and International Security Committee',
-    description: 'Deals with disarmament, global challenges and threats to peace that affect the international community.',
-    link: 'https://www.un.org/disarmament/institutions/first-committee/',
-    image: '/images/disec.jpg', // Add appropriate image paths
+    name: 'GA4-DISEC',
+    link: '/committees/disec',
+    image: '/images/disec.jpg',
   },
   {
-    name: 'UNSC',
-    fullName: 'United Nations Security Council',
-    description: 'Maintains international peace and security in accordance with the principles of the United Nations.',
-    link: 'https://www.un.org/securitycouncil/',
-    image: '/images/unsc.jpg',
+    name: 'GA1-SPECPOL',
+    link: '/committees/specpol',
+    image: '/images/specpol.jpg',
   },
   {
-    name: 'ECOSOC',
-    fullName: 'Economic and Social Council',
-    description: 'Coordinates the economic and social work of the United Nations and its specialized agencies.',
-    link: 'https://www.un.org/ecosoc/',
-    image: '/images/ecosoc.jpg',
+    name: 'ILO',
+    link: '/committees/ilo',
+    image: '/images/ilo.jpg',
   },
   {
-    name: 'UNHRC',
-    fullName: 'United Nations Human Rights Council',
-    description: 'Promotes and protects human rights around the world.',
-    link: 'https://www.ohchr.org/en/hrc',
-    image: '/images/unhrc.jpg',
+    name: 'F-UNSC',
+    link: '/committees/f-unsc',
+    image: '/images/f-unsc.jpg',
+  },
+  {
+    name: 'OTS',
+    link: '/committees/ots',
+    image: '/images/ots.jpg',
+  },
+  {
+    name: 'UEFA',
+    link: '/committees/uefa',
+    image: '/images/uefa.jpg',
+  },
+  {
+    name: 'FIA',
+    link: '/committees/fia',
+    image: '/images/fia.jpg',
+  },
+  {
+    name: 'JCC',
+    link: '/committees/jcc',
+    image: '/images/jcc.jpg',
+  },
+  {
+    name: 'HCC',
+    link: '/committees/hcc',
+    image: '/images/hcc.jpg',
+  },
+  {
+    name: 'Reconquista of Spain',
+    link: '/committees/crisis',
+    image: '/images/reconquista.jpg',
   },
 ];
+
 
 export const CommitteeGrid = () => {
   return (

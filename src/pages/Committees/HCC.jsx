@@ -19,8 +19,7 @@ const HCCPage = () => {
       title: 'Under-Secretary-General'
     },
     agendaItems: [
-      'Para kazanma falan',
-      'Sonbahar yaprakları yakın zamanda altından daha mı değerli olacak'
+      'Agenda: Spanish Reconquista'
     ],
     studyGuideUrl: '/study-guides/unhrc-2024.pdf',
     description: "The Nile flows red with conflict as Cleopatra VII, Queen of the Nile, navigates the treacherous tides of diplomacy, war, and ambition. Every decision will ripple across kingdoms, stirring chaos or forging alliances, as rival empires vie to claim Cleopatra’s throne and Egypt’s riches. Intrigue is the currency of this court. Secrets will be uncovered, and loyalties tested. Will you rise above the chaos to secure Egypt’s glory, or will the sands of time bury your efforts in obscurity? The weight of a kingdom rests on your shoulders, and the eyes of the ancient world are upon you."

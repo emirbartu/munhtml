@@ -19,8 +19,8 @@ const DISECPage = () => {
       title: 'Under-Secretary-General'
     },
     agendaItems: [
-      'Para kazanma falan',
-      'Sonbahar yaprakları yakın zamanda altından daha mı değerli olacak'
+      "Agenda 1: The Role of Religious Extremism in Global Security",
+      "Agenda 2: Ethnic Cleansing and Genocidal Warfare"
     ],
     studyGuideUrl: '/study-guides/unhrc-2024.pdf',
     description: "The Disarmament and International Security Committee (DISEC) is dedicated to addressing global peace and security challenges, focusing on disarmament, conflict resolution, and threats to international stability. In this session, DISEC will explore two critical agendas: the role of religious extremism in global security and ethnic cleansing and genocidal warfare. Delegates are tasked with engaging in constructive dialogue, fostering collaboration, and working toward comprehensive solutions to these pressing global issues."

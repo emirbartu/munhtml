@@ -93,21 +93,27 @@ const Header = () => {
                   borderColor={borderColor}
                   zIndex={1001}
                 >
-                  <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>DISEC</MenuItem>
-                  <MenuItem as={RouterLink} to="/committees/unsc" _hover={{ bg: menuHoverBg }}>UNSC</MenuItem>
-                  <MenuItem as={RouterLink} to="/committees/ecosoc" _hover={{ bg: menuHoverBg }}>ECOSOC</MenuItem>
-                  <MenuItem as={RouterLink} to="/committees/unhrc" _hover={{ bg: menuHoverBg }}>UNHRC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>GA1-DISEC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }}>GA4-SPECPOL</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }}>ILO</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }}>F-UNSC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }}>OTS</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/uefa" _hover={{ bg: menuHoverBg }}>UEFA</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }}>FIA</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }}>JCC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }}>HCC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }}>Reconquista of Spain</MenuItem>
                 </MenuList>
               </Menu>
             </Box>
-            <Button as={RouterLink} to="/#schedule" variant="ghost">
-              Schedule
-            </Button>
-            <ScrollLink to="venue" smooth={true} duration={500} spy={true}>
-              <Button variant="ghost">Venue</Button>
-            </ScrollLink>
             <ScrollLink to="faq" smooth={true} duration={500} spy={true}>
               <Button variant="ghost">FAQ</Button>
+            </ScrollLink>
+            <ScrollLink to="schedule" smooth={true} duration={500} spy={true}>
+              <Button variant="ghost">Schedule</Button>
+            </ScrollLink>
+            <ScrollLink to="venue" smooth={true} duration={500} spy={true}>
+              <Button variant="ghost">Venue</Button>
             </ScrollLink>
             <Button as={RouterLink} to="/teams" variant="ghost">
               Teams
@@ -160,16 +166,22 @@ const Header = () => {
               borderColor={borderColor}
               zIndex={1001}
             >
-              <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>DISEC</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/unsc" _hover={{ bg: menuHoverBg }}>UNSC</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/ecosoc" _hover={{ bg: menuHoverBg }}>ECOSOC</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/unhrc" _hover={{ bg: menuHoverBg }}>UNHRC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>GA1-DISEC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }}>GA4-SPECPOL</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }}>ILO</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }}>F-UNSC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }}>OTS</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/uefa" _hover={{ bg: menuHoverBg }}>UEFA</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }}>FIA</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }}>JCC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }}>HCC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }}>Reconquista of Spain</MenuItem>
             </MenuList>
           </Menu>
         </Box>
-        <Button as={RouterLink} to="/#schedule" variant="ghost" w="100%" _hover={{ bg: menuHoverBg }}>
-          Schedule
-        </Button>
+        <ScrollLink to="schedule" smooth={true} duration={500} spy={true}>
+          <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }}>Schedule</Button>
+        </ScrollLink>
         <ScrollLink to="venue" smooth={true} duration={500} spy={true}>
           <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }}>Venue</Button>
         </ScrollLink>

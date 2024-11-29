@@ -101,8 +101,9 @@ const CommitteePage = ({ committeeData }) => {
                 transition="all 0.2s"
                 _hover={{ bg: useColorModeValue('gray.100', 'gray.600') }}
               >
+
                 <Text fontSize="lg" fontWeight="medium" color={textColor}>
-                  Agenda Item {String.fromCharCode(65 + index)}: {item}
+                    {item}
                 </Text>
               </Box>
             ))}
