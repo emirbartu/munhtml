@@ -11,7 +11,6 @@ import {
 } from '@chakra-ui/react';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 
-
 const SocialButton = ({ icon, label, href }) => {
   return (
     <IconButton
@@ -44,13 +43,13 @@ const Footer = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCreatorText(prevText => 
-        prevText === 'YAFLMUN Head of IT Team' 
-          ? 'Emir Bartu Ekinci' 
+      setCreatorText(prevText =>
+        prevText === 'YAFLMUN Head of IT Team'
+          ? 'Emir Bartu Ekinci'
           : 'YAFLMUN Head of IT Team'
       );
     }, 2000);
-  
+
     return () => clearInterval(intervalId);
   }, []);
 
@@ -63,19 +62,24 @@ const Footer = () => {
       mt={8}
     >
       <Container as={Stack} maxW={'6xl'} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8}>
-          <Stack align={'flex-start'}>
+        <SimpleGrid
+          columns={{ base: 1, sm: 2, md: 3 }}
+          spacing={8}
+          justifyItems="center"
+          alignItems="center"
+        >
+          <Stack align={'center'}>
             <Heading as="h3" size="sm" mb={2}>Contact Us</Heading>
             <a href="mailto:yaflmunhr@gmail.com">yaflmunhr@gmail.com</a>
           </Stack>
 
-          <Stack align={'flex-start'}>
+          <Stack align={'center'}>
             <Heading as="h3" size="sm" mb={2}>Address</Heading>
-            <Text>Halkalı Merkez, Halkalı, 34303  </Text>
-            <Text>Küçükçekmece/İstanbul</Text>
+            <Text textAlign="center">Halkalı Merkez, Halkalı, 34303</Text>
+            <Text textAlign="center">Küçükçekmece/İstanbul</Text>
           </Stack>
 
-          <Stack align={'flex-start'}>
+          <Stack align={'center'}>
             <Heading as="h3" size="sm" mb={2}>Follow Us</Heading>
             <Stack direction={'row'} spacing={4}>
               <SocialButton

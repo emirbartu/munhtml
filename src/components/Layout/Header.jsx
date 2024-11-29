@@ -14,14 +14,22 @@ import {
   HStack
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon, ChevronDownIcon } from '@chakra-ui/icons';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onToggle } = useDisclosure();
   const { isOpen: isMenuOpen, onOpen: onMenuOpen, onClose: onMenuClose } = useDisclosure();
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  const handleNavClick = (section) => {
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: section } });
+    }
+    onToggle(); // Close mobile menu after navigation
+  };
   const bgColor = useColorModeValue('white', 'gray.800');
   const textColor = useColorModeValue('gray.800', 'white');
   const menuBg = useColorModeValue('white', 'gray.800');
@@ -66,9 +74,7 @@ const Header = () => {
             spacing={4}
             display={{ base: 'none', md: 'flex' }}
           >
-            <ScrollLink to="hero" smooth={true} duration={500} spy={true}>
-              <Button variant="ghost">Home</Button>
-            </ScrollLink>
+            <Button variant="ghost" onClick={() => handleNavClick('hero')}>Home</Button>
             <Box
               position="relative"
               onMouseEnter={onMenuOpen}
@@ -93,29 +99,23 @@ const Header = () => {
                   borderColor={borderColor}
                   zIndex={1001}
                 >
-                <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>GA1-DISEC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }}>GA4-SPECPOL</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }}>ILO</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }}>F-UNSC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }}>OTS</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/uefa" _hover={{ bg: menuHoverBg }}>UEFA</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }}>FIA</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }}>JCC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }}>HCC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }}>Reconquista of Spain</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }} onClick={onToggle}>GA1-DISEC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }} onClick={onToggle}>GA4-SPECPOL</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }} onClick={onToggle}>ILO</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>F-UNSC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }} onClick={onToggle}>OTS</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/uefa" _hover={{ bg: menuHoverBg }} onClick={onToggle}>UEFA</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }} onClick={onToggle}>FIA</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>JCC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>HCC</MenuItem>
+                <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }} onClick={onToggle}>Reconquista of Spain</MenuItem>
                 </MenuList>
               </Menu>
             </Box>
-            <ScrollLink to="faq" smooth={true} duration={500} spy={true}>
-              <Button variant="ghost">FAQ</Button>
-            </ScrollLink>
-            <ScrollLink to="schedule" smooth={true} duration={500} spy={true}>
-              <Button variant="ghost">Schedule</Button>
-            </ScrollLink>
-            <ScrollLink to="venue" smooth={true} duration={500} spy={true}>
-              <Button variant="ghost">Venue</Button>
-            </ScrollLink>
-            <Button as={RouterLink} to="/teams" variant="ghost">
+<Button variant="ghost" onClick={() => handleNavClick('faq')}>FAQ</Button>
+            <Button variant="ghost" onClick={() => handleNavClick('schedule')}>Schedule</Button>
+            <Button variant="ghost" onClick={() => handleNavClick('venue')}>Venue</Button>
+            <Button as={RouterLink} to="/teams" variant="ghost" onClick={onToggle}>
               Teams
             </Button>
           </HStack>
@@ -137,9 +137,7 @@ const Header = () => {
         borderTop="1px"
         borderColor={borderColor}
       >
-        <ScrollLink to="hero" smooth={true} duration={500} spy={true}>
-          <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }}>Home</Button>
-        </ScrollLink>
+        <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }} onClick={() => handleNavClick('hero')}>Home</Button>
         <Box
           position="relative"
           onMouseEnter={onMenuOpen}
@@ -166,34 +164,29 @@ const Header = () => {
               borderColor={borderColor}
               zIndex={1001}
             >
-              <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }}>GA1-DISEC</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }}>GA4-SPECPOL</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }}>ILO</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }}>F-UNSC</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }}>OTS</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/uefa" _hover={{ bg: menuHoverBg }}>UEFA</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }}>FIA</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }}>JCC</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }}>HCC</MenuItem>
-              <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }}>Reconquista of Spain</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }} onClick={onToggle}>GA1-DISEC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }} onClick={onToggle}>GA4-SPECPOL</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }} onClick={onToggle}>ILO</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>F-UNSC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }} onClick={onToggle}>OTS</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/uefa" _hover={{ bg: menuHoverBg }} onClick={onToggle}>UEFA</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }} onClick={onToggle}>FIA</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>JCC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>HCC</MenuItem>
+              <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }} onClick={onToggle}>Reconquista of Spain</MenuItem>
             </MenuList>
           </Menu>
         </Box>
-        <ScrollLink to="schedule" smooth={true} duration={500} spy={true}>
-          <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }}>Schedule</Button>
-        </ScrollLink>
-        <ScrollLink to="venue" smooth={true} duration={500} spy={true}>
-          <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }}>Venue</Button>
-        </ScrollLink>
-        <ScrollLink to="faq" smooth={true} duration={500} spy={true}>
-          <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }}>FAQ</Button>
-        </ScrollLink>
+        <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }} onClick={() => handleNavClick('schedule')}>Schedule</Button>
+        <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }} onClick={() => handleNavClick('venue')}>Venue</Button>
+        <Button variant="ghost" w="100%" _hover={{ bg: menuHoverBg }} onClick={() => handleNavClick('faq')}>FAQ</Button>
         <Button
           as={RouterLink}
           to="/teams"
           variant="ghost"
           w="100%"
           _hover={{ bg: menuHoverBg }}
+          onClick={onToggle}
         >
           Teams
         </Button>

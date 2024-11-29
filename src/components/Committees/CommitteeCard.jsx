@@ -21,8 +21,12 @@ export const CommitteeCard = ({ name, image, link }) => {
         transition="all 0.3s ease-in-out"
         _hover={{
           transform: 'translateY(-4px)',
-          boxShadow: 'xl',
+          boxShadow: '2xl',
+          cursor: 'pointer',
         }}
+        p={2}
+        position="relative"
+        zIndex={1}
       >
         <Box
           bgImage={`url(${image})`}
@@ -30,27 +34,40 @@ export const CommitteeCard = ({ name, image, link }) => {
           bgPosition="center"
           filter="grayscale(100%)"
           transition="all 0.3s ease-in-out"
-          _hover={{ 
+          _hover={{
             filter: 'grayscale(0%)',
             transform: 'scale(1.05)'
           }}
-          height="100px"
+          height="150px"
+          position="relative"
+          _after={{
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            bg: 'transparent',
+            transition: 'all 0.3s ease-in-out',
+            _groupHover: { bg: 'blackAlpha.100' }
+          }}
         />
 
         {/* Committee Name */}
-        <VStack 
-          p={4} 
-          spacing={2} 
-          align="center" 
-          transition="all 0.3s ease-in-out"
+        <VStack
+          p={4}
+          spacing={2}
+          align="center"
+          role="group"
         >
-          <Heading 
-            as="h3" 
-            size="lg" 
+          <Heading
+            as="h3"
+            size="lg"
             textAlign="center"
             transition="all 0.3s ease-in-out"
-            _hover={{
-              fontSize: '1.5em'
+            _groupHover={{
+              transform: 'scale(1.05)',
+              color: useColorModeValue('blue.600', 'blue.200')
             }}
           >
             {name}
