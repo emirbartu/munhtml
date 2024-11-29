@@ -62,7 +62,27 @@ const parseTeamData = (images) => {
         image: decodeURIComponent(imageUrl)
       };
     }
-  }).sort((a, b) => (a.role + a.name).localeCompare(b.role + b.name));
+  }).sort((a, b) => {
+    // Priority roles that should appear first
+    const priorityRoles = ['Secretary General', 'Deputy Secretary General', 'Under Secretary General', 'Director General'];
+
+    // Check if either role is a priority role
+    const aIsPriority = priorityRoles.some(role => a.role.toLowerCase().includes(role.toLowerCase()));
+    const bIsPriority = priorityRoles.some(role => b.role.toLowerCase().includes(role.toLowerCase()));
+
+    // Sort priority roles first
+    if (aIsPriority && !bIsPriority) return -1;
+    if (!aIsPriority && bIsPriority) return 1;
+    if (aIsPriority && bIsPriority) {
+      // If both are priority, sort by the order in priorityRoles array
+      const aIndex = priorityRoles.findIndex(role => a.role.toLowerCase().includes(role.toLowerCase()));
+      const bIndex = priorityRoles.findIndex(role => b.role.toLowerCase().includes(role.toLowerCase()));
+      if (aIndex !== bIndex) return aIndex - bIndex;
+    }
+
+    // For non-priority roles or same priority level, sort alphabetically
+    return (a.role + a.name).localeCompare(b.role + b.name);
+  });
 };
 
 export const TeamGrid = ({ activeTeam = 'academy' }) => {
@@ -76,16 +96,28 @@ export const TeamGrid = ({ activeTeam = 'academy' }) => {
 
   return (
     <Box w="full" px={4}>
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} w="full">
-        {teamMembers.map((member, index) => (
-          <TeamMember
-            key={`${member.role}-${member.name}-${index}`}
-            name={member.name || member.role}
-            role={member.name ? member.role : ''}
-            image={member.image}
-            link={member.name === "Hakkı Yılmaz Yılmazer" ? "https://youtu.be/KALvrIuZ3yM" : undefined}
-          />
-        ))}
+      <SimpleGrid
+        columns={{ base: 1, md: 2, lg: 3 }}
+        spacing={8}
+        w="full"
+        justifyItems="center"
+        alignItems="start"
+      >
+        {teamMembers.map((member, index) => {
+          const isPriorityRole = member.role.toLowerCase().includes('secretary') ||
+                               member.role.toLowerCase().includes('director');
+
+          return (
+            <TeamMember
+              key={`${member.role}-${member.name}-${index}`}
+              name={member.name || member.role}
+              role={member.name ? member.role : ''}
+              image={member.image}
+              link={member.name === "Hakkı Yılmaz Yılmazer" ? "https://youtu.be/KALvrIuZ3yM" : undefined}
+              isPriority={isPriorityRole}
+            />
+          );
+        })}
       </SimpleGrid>
     </Box>
   );

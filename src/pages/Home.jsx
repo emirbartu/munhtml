@@ -7,18 +7,31 @@ import {
   VStack,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { VenueSection } from '../components/Venue/VenueSection';
 import { CommitteeGrid } from '../components/Committees/CommitteeGrid';
 import ScheduleSection from '../components/Schedule/Schedule';
 import CountdownTimer from '../components/Countdown/CountdownTimer';
 import FAQSection from '../components/FAQ/FAQSection';
+import { useEffect } from 'react';
 
 const Home = () => {
+  const location = useLocation();
   const gradientText = useColorModeValue(
     'linear(to-r, pink.400, cyan.400)',
     'linear(to-r, pink.500, cyan.500)'
   );
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   return (
     <Container maxW="container.xl" position="relative">

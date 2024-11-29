@@ -6,7 +6,7 @@ export const Map = () => {
 
   return (
     <Container maxW="container.xl" py={8}>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} justifyItems="center">
         <Box
           borderRadius="lg"
           overflow="hidden"
@@ -14,9 +14,10 @@ export const Map = () => {
           borderWidth="1px"
           borderColor={borderColor}
           bg={bgColor}
-          h="300px"
-          w="300px"
+          h={["250px", "300px", "400px"]}
+          w={["100%", "100%", "100%"]}
           position="relative"
+          maxW={["100%", "600px"]}
         >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2128.1593010929673!2d28.788423288423424!3d41.032436938082746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa438a39f52db%3A0xa4eb20ddc406fa96!2s%C4%B0stanbul%20Sabahattin%20Zaim%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1732816606316!5m2!1str!2str"
