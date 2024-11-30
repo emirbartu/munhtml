@@ -51,7 +51,7 @@ const FAQSection = () => {
     },
     {
         question: 'Which committees are you suggesting for first timers?',
-        answer: 'First timers should apply for one of the two GA committees. They are: GA1: DISEC, GA3: SOCHUM.',
+        answer: 'First timers should apply for one of the two GA committees. They are: GA1: DISEC, GA4: SPECPOL.',
     },
   ];
 
