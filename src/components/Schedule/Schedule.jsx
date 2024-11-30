@@ -120,7 +120,7 @@ const ScheduleSection = () => {
                   day={day.day}
                   date={day.date}
                   scheduleItems={day.items}
-                  specialItem={day.specialItem || []} // Add this line
+                  specialItem={day.specialItem || []}
                   isActive={activeDay === day.day}
                 />
               ))}

@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import {
   Box,
   Flex,
@@ -15,7 +16,6 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -24,12 +24,40 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleNavClick = (section) => {
-    if (location.pathname !== "/") {
-      navigate("/", { state: { scrollTo: section } });
+  useEffect(() => {
+    // Check if there's a section to scroll to from navigation state
+    const state = location.state;
+    if (state && state.scrollTo) {
+      const element = document.getElementById(state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Clear the state to prevent repeated scrolling
+        window.history.replaceState({}, document.title);
+      }
     }
-    onToggle(); // Close mobile menu after navigation
+  }, [location]);
+
+  const handleNavClick = (section) => {
+    // If not on homepage, navigate to homepage first
+    if (location.pathname !== "/") {
+      navigate("/", { 
+        state: { scrollTo: section },
+        replace: true 
+      });
+    } else {
+      // If already on homepage, scroll directly
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    
+    // Close mobile menu if open
+    if (isOpen) {
+      onToggle();
+    }
   };
+
   const bgColor = useColorModeValue('white', 'gray.800');
   const textColor = useColorModeValue('gray.800', 'white');
   const menuBg = useColorModeValue('white', 'gray.800');
@@ -85,12 +113,22 @@ const Header = () => {
                   as={Button}
                   variant="ghost"
                   rightIcon={<ChevronDownIcon />}
-                  onClick={() => {
-                    const element = document.getElementById('committees');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  position="relative"
+                  sx={{
+                    '&::after': {
+                      content: '""',
+                      position: 'absolute',
+                      top: '-10px',
+                      bottom: '-10px',
+                      left: '-10px',
+                      right: '-10px',
+                      zIndex: 0,
+                    },
+                    '&:hover::after': {
+                      background: 'transparent',
                     }
                   }}
+                  onClick={() => handleNavClick('committees')}
                 >
                   Committees
                 </MenuButton>
@@ -99,20 +137,20 @@ const Header = () => {
                   borderColor={borderColor}
                   zIndex={1001}
                 >
-                <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }} onClick={onToggle}>GA1-DISEC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }} onClick={onToggle}>GA4-SPECPOL</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }} onClick={onToggle}>ILO</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>F-UNSC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }} onClick={onToggle}>OTS</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/uefa" _hover={{ bg: menuHoverBg }} onClick={onToggle}>UEFA</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }} onClick={onToggle}>FIA</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>JCC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>HCC</MenuItem>
-                <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }} onClick={onToggle}>Reconquista of Spain</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/disec" _hover={{ bg: menuHoverBg }} onClick={onToggle}>GA1-DISEC</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/specpol" _hover={{ bg: menuHoverBg }} onClick={onToggle}>GA4-SPECPOL</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/ilo" _hover={{ bg: menuHoverBg }} onClick={onToggle}>ILO</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/f-unsc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>F-UNSC</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/ots" _hover={{ bg: menuHoverBg }} onClick={onToggle}>OTS</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/uefa" _hover={{ bg: menuHoverBg }} onClick={onToggle}>UEFA</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/fia" _hover={{ bg: menuHoverBg }} onClick={onToggle}>FIA</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/jcc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>JCC</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/hcc" _hover={{ bg: menuHoverBg }} onClick={onToggle}>HCC</MenuItem>
+                  <MenuItem as={RouterLink} to="/committees/crisis" _hover={{ bg: menuHoverBg }} onClick={onToggle}>Reconquista of Spain</MenuItem>
                 </MenuList>
               </Menu>
             </Box>
-<Button variant="ghost" onClick={() => handleNavClick('faq')}>FAQ</Button>
+            <Button variant="ghost" onClick={() => handleNavClick('faq')}>FAQ</Button>
             <Button variant="ghost" onClick={() => handleNavClick('schedule')}>Schedule</Button>
             <Button variant="ghost" onClick={() => handleNavClick('venue')}>Venue</Button>
             <Button as={RouterLink} to="/teams" variant="ghost" onClick={onToggle}>
@@ -150,12 +188,7 @@ const Header = () => {
               w="100%"
               rightIcon={<ChevronDownIcon />}
               _hover={{ bg: menuHoverBg }}
-              onClick={() => {
-                const element = document.getElementById('committees');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
+              onClick={() => handleNavClick('committees')}
             >
               Committees
             </MenuButton>

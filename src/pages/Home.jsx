@@ -17,10 +17,6 @@ import { useEffect } from 'react';
 
 const Home = () => {
   const location = useLocation();
-  const gradientText = useColorModeValue(
-    'linear(to-r, pink.400, cyan.400)',
-    'linear(to-r, pink.500, cyan.500)'
-  );
 
   useEffect(() => {
     if (location.state?.scrollTo) {
@@ -60,7 +56,6 @@ const Home = () => {
           color={'white'}
         >
         YAFLMUN'25
-
         </Heading>
         <CountdownTimer />
         <Button as={RouterLink} to="/apply" size="lg" colorScheme="blue">
@@ -80,7 +75,7 @@ We have been selected to bring you the most absolute academic excellence this ye
 Lastly, as we have proven that an affordable, challenging and fun MUN experience is possible with the spirit of greatness which YAFLMUN holds in its core, this year we are ready to raise the stakes even higher and give you a complete experience which will hopefully be a fond experience for all of you.
 We all expect you on January 21-24 at Istanbul Zaim University for YAFLMUN’25. <br />
 Sincerely, <br />Co Secretaries-General
-HAKKI YILMAZER, AHMET İSHAK YILMAZ
+Hakkı Yılmazer, Ahmet İshak Yılmaz	
           </Text>
         </Box>
         </Text>

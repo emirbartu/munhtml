@@ -7,14 +7,14 @@ import Teams from './pages/Teams';
 import Committees from './pages/Committees';
 import FUNSCPage from './pages/Committees/F-UNSC';
 import FIAPage from './pages/Committees/FIA';
-import DISECPage from './pages/Committees/GA1-DISEC';
-import SPECPOLPage from './pages/Committees/GA4-SPECPOL';
+import DISECPage from './pages/Committees/DISEC';
+import UEFAPage from './pages/Committees/UEFA';
+import SPECPOLPage from './pages/Committees/SPECPOL';
 import HCCPage from './pages/Committees/HCC';
 import ILOPage from './pages/Committees/ILO';
 import JCCPage from './pages/Committees/JCC';
 import OTSPage from './pages/Committees/OTS';
 import CrisisPage from './pages/Committees/crisis';
-import UNHRCPage from './pages/Committees/UNHRC';
 import Apply from './pages/Apply';
 
 function App() {
@@ -26,10 +26,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/committees" element={<Committees />} />
-            <Route path="/committees/unhrc" element={<UNHRCPage />} />
             <Route path="/committees/f-unsc" element={<FUNSCPage />} />
             <Route path="/committees/fia" element={<FIAPage />} />
             <Route path="/committees/disec" element={<DISECPage />} />
+            <Route path="/committees/uefa" element={<UEFAPage />} />
             <Route path="/committees/specpol" element={<SPECPOLPage />} />
             <Route path="/committees/hcc" element={<HCCPage />} />
             <Route path="/committees/ilo" element={<ILOPage />} />

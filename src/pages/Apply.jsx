@@ -87,7 +87,7 @@ const Apply = () => {
       early: '700₺',
       regular: '750₺',
       late: '850₺',
-      formLink: 'https://forms.gle/n7PU5imu8GedJ2Cs9'
+      formLink: 'https://forms.gle/DF1yzcMkNhqpcons5'
     },
     {
       icon: MdPerson,
@@ -95,7 +95,7 @@ const Apply = () => {
       early: '750₺',
       regular: '800₺',
       late: '900₺',
-      formLink: 'https://forms.gle/UcvYqy3UNaBqzB9YA'
+      formLink: 'https://forms.gle/rtYp4DdpSemP7mfBA'
     },
     {
       icon: MdLanguage,
@@ -103,7 +103,7 @@ const Apply = () => {
       early: '80€',
       regular: '85€',
       late: '90€',
-      formLink: '#'
+      formLink: 'https://forms.gle/ABVdVoq1AFDwmjRs5'
     },
     {
       icon: MdCameraAlt,

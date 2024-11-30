@@ -31,10 +31,7 @@ export const Transport = () => {
       <VStack align="start" spacing={6}>
         <Box>
           <Heading size="md" mb={2}>How to Get to the Venue</Heading>
-          <Text color={useColorModeValue('gray.600', 'gray.300')}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula
-            magna vitae porttitor efficitur.
-          </Text>
+
         </Box>
 
         <Divider />

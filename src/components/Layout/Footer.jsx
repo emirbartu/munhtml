@@ -46,7 +46,7 @@ const Footer = () => {
       setCreatorText(prevText =>
         prevText === 'YAFLMUN Head of IT Team'
           ? 'Emir Bartu Ekinci'
-          : 'YAFLMUN Head of IT Team'
+          : 'YAFLMUN IT Team'
       );
     }, 2000);
 

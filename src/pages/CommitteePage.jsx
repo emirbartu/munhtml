@@ -8,16 +8,17 @@ const CommitteePage = ({ committeeData }) => {
 
   const defaultCommitteeData = {
     name: 'United Nations General Assembly Legal Committee',
-    usg1: {
-      name: 'John Doe',
-      image: '/images/usg/usg1-placeholder.jpg',
-      title: 'Under-Secretary-General'
-    },
-    usg2: {
-      name: 'Jane Smith',
-      image: '/images/usg/usg2-placeholder.jpg',
-      title: 'Under-Secretary-General'
-    },
+    // USG yorum satiri
+    // usg1: {
+    //   name: 'John Doe',
+    //   image: '/images/usg/usg1-placeholder.jpg',
+    //   title: 'Under-Secretary-General'
+    // },
+    // usg2: {
+    //   name: 'Jane Smith',
+    //   image: '/images/usg/usg2-placeholder.jpg',
+    //   title: 'Under-Secretary-General'
+    // },
     agendaItems: [
       'Global Big Data Security and Privacy',
       'Global Artificial Intelligence Regulation'
@@ -31,8 +32,8 @@ const CommitteePage = ({ committeeData }) => {
   return (
     <Container maxW="container.xl" py={12}>
       <VStack spacing={10} align="stretch">
-        {/* USG Section */}
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+        {/* USG Section Commented Out */}
+        {/* <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
           {[data.usg1, data.usg2].map((usg, index) => (
             <Box
               key={index}
@@ -75,7 +76,7 @@ const CommitteePage = ({ committeeData }) => {
               </Text>
             </Box>
           ))}
-        </SimpleGrid>
+        </SimpleGrid> */}
 
         {/* Agenda Items */}
         <Box
@@ -101,7 +102,6 @@ const CommitteePage = ({ committeeData }) => {
                 transition="all 0.2s"
                 _hover={{ bg: useColorModeValue('gray.100', 'gray.600') }}
               >
-
                 <Text fontSize="lg" fontWeight="medium" color={textColor}>
                     {item}
                 </Text>
@@ -114,22 +114,18 @@ const CommitteePage = ({ committeeData }) => {
         <Button
           size="lg"
           width="full"
-          bg="blue.500"
-          color="white"
+          bg="gray.500"
+          color="gray.300"
           py={7}
           fontSize="xl"
           fontWeight="bold"
-          _hover={{
-            bg: 'blue.600',
-            transform: 'translateY(-2px)',
-            boxShadow: 'xl'
-          }}
-          _active={{
-            bg: 'blue.700'
-          }}
-          transition="all 0.3s"
+          isDisabled={true}
+          cursor="not-allowed"
+          _hover={{}}
+          _active={{}}
+          opacity={0.6}
         >
-          STUDY GUIDE
+          Study guides will be available soon!
         </Button>
 
         {/* Committee Description */}

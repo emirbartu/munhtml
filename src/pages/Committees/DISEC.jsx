@@ -3,11 +3,11 @@ import CommitteePage from '../CommitteePage';
 
 const DISECPage = () => {
   useEffect(() => {
-    document.title = 'DISEC';
+    document.title = 'GA1-DISEC';
   }, []);
 
   const disecData = {
-    name: 'DISEC',
+    name: 'GA1-DISEC',
     usg1: {
       name: 'Hakkı Yılmaz Yılmazer',
       image: '/src/assets/akademi/hyy.JPG',

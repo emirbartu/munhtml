@@ -3,54 +3,54 @@ import { CommitteeCard } from './CommitteeCard';
 
 const committees = [
   {
-    name: 'GA4-DISEC',
+    name: 'GA1-DISEC',
     link: '/committees/disec',
-    image: '/images/disec.jpg',
+    image: 'src/assets/thumbnail/disec.jpg',
   },
   {
-    name: 'GA1-SPECPOL',
+    name: 'GA4-SPECPOL',
     link: '/committees/specpol',
-    image: '/images/specpol.jpg',
+    image: 'src/assets/thumbnail/specpol.jpg',
   },
   {
     name: 'ILO',
     link: '/committees/ilo',
-    image: '/images/ilo.jpg',
+    image: 'src/assets/thumbnail/ilo.jpg',
   },
   {
     name: 'F-UNSC',
     link: '/committees/f-unsc',
-    image: '/images/f-unsc.jpg',
+    image: 'src/assets/thumbnail/funsc.jpeg',
   },
   {
     name: 'OTS',
     link: '/committees/ots',
-    image: '/images/ots.jpg',
+    image: 'src/assets/thumbnail/ots.jpeg',
   },
   {
     name: 'UEFA',
     link: '/committees/uefa',
-    image: '/images/uefa.jpg',
+    image: 'src/assets/thumbnail/uefa.jpeg',
   },
   {
     name: 'FIA',
     link: '/committees/fia',
-    image: '/images/fia.jpg',
+    image: 'src/assets/thumbnail/fia.jpeg',
   },
   {
     name: 'JCC',
     link: '/committees/jcc',
-    image: '/images/jcc.jpg',
+    image: 'src/assets/thumbnail/jcc.jpeg',
   },
   {
     name: 'HCC',
     link: '/committees/hcc',
-    image: '/images/hcc.jpg',
+    image: 'src/assets/thumbnail/hcc.jpeg',
   },
   {
     name: 'Reconquista of Spain',
     link: '/committees/crisis',
-    image: '/images/reconquista.jpg',
+    image: 'src/assets/thumbnail/crisis.jpeg',
   },
 ];
 
