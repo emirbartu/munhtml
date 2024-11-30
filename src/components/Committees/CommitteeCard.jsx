@@ -3,15 +3,15 @@ import {
   Heading,
   VStack,
   useColorModeValue,
-  Link
 } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const CommitteeCard = ({ name, image, link }) => {
   const bgColor = useColorModeValue('gray.300', 'gray.700');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
 
   return (
-    <Link href={link} isExternal _hover={{ textDecoration: 'none' }}>
+    <Box as={RouterLink} to={link} _hover={{ textDecoration: 'none' }}>
       <Box
         bg={bgColor}
         borderWidth="1px"
@@ -74,6 +74,6 @@ export const CommitteeCard = ({ name, image, link }) => {
           </Heading>
         </VStack>
       </Box>
-    </Link>
+    </Box>
   );
 };

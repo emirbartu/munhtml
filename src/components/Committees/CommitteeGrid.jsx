@@ -62,7 +62,7 @@ const committees = [
 
 export const CommitteeGrid = () => {
   return (
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
       {committees.map((committee) => (
         <CommitteeCard key={committee.name} {...committee} />
       ))}
