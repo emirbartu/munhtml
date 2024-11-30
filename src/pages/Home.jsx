@@ -40,7 +40,7 @@ const Home = () => {
         transform="translateX(-50%)"
         width="100vw"
         height="400px"
-        bgImage="src/assets/thumbnail/banner.jpg"
+        bgImage="src/assets/banner.jpg"
         bgSize="cover"
         bgPosition="center"
         backgroundRepeat={0}
