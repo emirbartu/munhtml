@@ -37,14 +37,14 @@ const SocialButton = ({ icon, label, href }) => {
 };
 
 const Footer = () => {
-  const [creatorText, setCreatorText] = useState('YAFLMUN Head of IT Team');
+  const [creatorText, setCreatorText] = useState('YAFLMUN IT Team');
   const bgColor = useColorModeValue('gray.50', 'gray.900');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCreatorText(prevText =>
-        prevText === 'YAFLMUN Head of IT Team'
+        prevText === 'YAFLMUN IT Team'
           ? 'Emir Bartu Ekinci'
           : 'YAFLMUN IT Team'
       );
