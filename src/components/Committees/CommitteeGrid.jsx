@@ -54,7 +54,7 @@ const committees = [
     image: committeeImages['/src/assets/committee-thumbnails/hcc.jpg'],
   },
   {
-    name: 'Cleopatra',
+    name: 'Crisis Committee',
     link: '/committees/crisis',
     image: committeeImages['/src/assets/committee-thumbnails/crisis.jpg'],
   },
