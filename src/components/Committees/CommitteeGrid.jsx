@@ -1,4 +1,4 @@
-import { SimpleGrid } from '@chakra-ui/react';
+import { SimpleGrid, Flex  } from '@chakra-ui/react';
 import { CommitteeCard } from './CommitteeCard';
 
 // Dynamically import all images from the committee-thumbnails directory
@@ -54,7 +54,7 @@ const committees = [
     image: committeeImages['/src/assets/committee-thumbnails/hcc.jpg'],
   },
   {
-    name: 'Crisis Committee',
+    name: 'Cabinet of Cleopatra',
     link: '/committees/crisis',
     image: committeeImages['/src/assets/committee-thumbnails/crisis.jpg'],
   },
@@ -62,10 +62,17 @@ const committees = [
 
 export const CommitteeGrid = () => {
   return (
-    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-      {committees.map((committee) => (
-        <CommitteeCard key={committee.name} {...committee} />
-      ))}
-    </SimpleGrid>
+    <Flex justifyContent="center" width="full">
+      <SimpleGrid 
+        columns={{ base: 1, md: 2, lg: 3 }} 
+        spacing={8} 
+        maxWidth="container.xl"
+        justifyContent="center"
+      >
+        {committees.map((committee) => (
+          <CommitteeCard key={committee.name} {...committee} />
+        ))}
+      </SimpleGrid>
+    </Flex>
   );
 };

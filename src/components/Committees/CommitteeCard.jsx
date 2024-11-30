@@ -24,7 +24,7 @@ export const CommitteeCard = ({ name, image, link }) => {
           boxShadow: '2xl',
           cursor: 'pointer',
         }}
-        p={2}
+        p={4}
         position="relative"
         zIndex={1}
       >

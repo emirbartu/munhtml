@@ -87,11 +87,14 @@ const Footer = () => {
                 href={'https://www.instagram.com/yafl.mun25/'}
                 icon={<FaInstagram />}
               />
+              {/*
               <SocialButton
                 label={'LinkedIn'}
                 href={'https://linkedin.com/company/templatemun'}
                 icon={<FaLinkedin />}
+              
               />
+               */}
             </Stack>
           </Stack>
         </SimpleGrid>
