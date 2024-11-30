@@ -29,6 +29,12 @@ const Home = () => {
     }
   }, [location]);
 
+  // Dynamic import for banner and committee thumbnails
+  const images = import.meta.glob('/src/assets/committee-thumbnails/banner.jpg', {
+    eager: true,
+    as: 'url'
+  });
+  
   return (
     <Container maxW="container.xl" position="relative">
       {/* Hero Section */}
@@ -40,7 +46,7 @@ const Home = () => {
         transform="translateX(-50%)"
         width="100vw"
         height="400px"
-        bgImage="src/assets/banner.jpg"
+        bgImage={images['/src/assets/committee-thumbnails/banner.jpg']}
         bgSize="cover"
         bgPosition="center"
         backgroundRepeat={0}
@@ -71,9 +77,9 @@ const Home = () => {
           <Text fontSize="lg" lineHeight="tall">
           Esteemed Delegates and Distinguished Guests,
 To begin with, we would like to welcome you all to the 2nd annual edition of YAFLMUN. As we greet you all with warm wishes and the spirit of the new year, with sheer excitement we can undoubtedly say that with the best of our efforts, we have tried to put on the greatest show that you will ever endure in the MUN community.
-We have been selected to bring you the most absolute academic excellence this year with sharing the role of the Secretary-General position. With 2 General Assembly Committees, 4 Special Committees and 3 Crisis Committees we have prepared a much more complex and alluring MUN experience compared to last year with given our experience from YAFLMUN’23.
+We have been selected to bring you the most absolute academic excellence this year with sharing the role of the Secretary-General position. With 2 General Assembly Committees, 4 Special Committees and 3 Crisis Committees we have prepared a much more complex and alluring MUN experience compared to last year with given our experience from YAFLMUN'23.
 Lastly, as we have proven that an affordable, challenging and fun MUN experience is possible with the spirit of greatness which YAFLMUN holds in its core, this year we are ready to raise the stakes even higher and give you a complete experience which will hopefully be a fond experience for all of you.
-We all expect you on January 21-24 at Istanbul Zaim University for YAFLMUN’25. <br />
+We all expect you on January 21-24 at Istanbul Zaim University for YAFLMUN'25. <br />
 Sincerely, <br />Co Secretaries-General
 Hakkı Yılmazer, Ahmet İshak Yılmaz	
           </Text>
