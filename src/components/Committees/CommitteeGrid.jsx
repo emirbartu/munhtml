@@ -2,7 +2,7 @@ import { SimpleGrid, Flex  } from '@chakra-ui/react';
 import { CommitteeCard } from './CommitteeCard';
 
 // Dynamically import all images from the committee-thumbnails directory
-const committeeImages = import.meta.glob('/src/assets/committee-thumbnails/*.{jpg,JPG}', {
+const committeeImages = import.meta.glob('/src/assets/committee-thumbnails/*.{jpg,JPG,png}', {
   eager: true,
   as: 'url'
 });
@@ -36,7 +36,7 @@ const committees = [
   {
     name: 'UEFA',
     link: '/committees/uefa',
-    image: committeeImages['/src/assets/committee-thumbnails/uefa.jpg'],
+    image: committeeImages['/src/assets/committee-thumbnails/uefa.png'],
   },
   {
     name: 'FIA',
