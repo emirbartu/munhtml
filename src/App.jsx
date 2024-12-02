@@ -16,7 +16,7 @@ import JCCPage from './pages/Committees/JCC';
 import OTSPage from './pages/Committees/OTS';
 import CrisisPage from './pages/Committees/crisis';
 import Apply from './pages/Apply';
-
+import { Analytics } from '@vercel/analytics/react';
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -40,6 +40,9 @@ function App() {
           </Routes>
         </Layout>
       </BrowserRouter>
+      <div>
+          <Analytics />
+      </div>
     </ChakraProvider>
   );
 }
