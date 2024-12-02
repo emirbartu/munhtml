@@ -20,7 +20,6 @@ const formatName = (str) => {
     .map(part => part.trim())
     .map(part => part
       .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
       .join(' ')
     )
     .join(' ');
