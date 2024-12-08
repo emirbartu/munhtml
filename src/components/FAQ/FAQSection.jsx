@@ -42,7 +42,7 @@ const FAQSection = () => {
         answer: 'We have already asked you about your eating habits in the application forms. If you have a different type of food choice, we expect you to mention it in the application form and contact us via the given email or phone numbers.',
     },
     {
-        question: 'I am a university student. Can I still apply for this conference?',
+        question: 'I am an university student. Can I still apply for this conference?',
         answer: 'Yes, all university students are welcomed at our conference.',
     },
     {

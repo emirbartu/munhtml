@@ -24,6 +24,11 @@ const committees = [
     image: committeeImages['/src/assets/committee-thumbnails/ilo.jpg'],
   },
   {
+    name: 'European Parliment',
+    link: '/committees/eu',
+    image: committeeImages['/src/assets/committee-thumbnails/eu.jpg'],
+  },
+  {
     name: 'F-UNSC',
     link: '/committees/f-unsc',
     image: committeeImages['/src/assets/committee-thumbnails/funsc.jpg'],

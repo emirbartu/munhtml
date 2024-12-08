@@ -12,6 +12,7 @@ import UEFAPage from './pages/Committees/UEFA';
 import SPECPOLPage from './pages/Committees/SPECPOL';
 import HCCPage from './pages/Committees/HCC';
 import ILOPage from './pages/Committees/ILO';
+import EUPage from './pages/Committees/EU';
 import JCCPage from './pages/Committees/JCC';
 import OTSPage from './pages/Committees/OTS';
 import CrisisPage from './pages/Committees/crisis';
@@ -33,6 +34,7 @@ function App() {
             <Route path="/committees/specpol" element={<SPECPOLPage />} />
             <Route path="/committees/hcc" element={<HCCPage />} />
             <Route path="/committees/ilo" element={<ILOPage />} />
+            <Route path="/committees/eu" element={<EUPage />} />
             <Route path="/committees/jcc" element={<JCCPage />} />
             <Route path="/committees/ots" element={<OTSPage />} />
             <Route path="/committees/crisis" element={<CrisisPage />} />

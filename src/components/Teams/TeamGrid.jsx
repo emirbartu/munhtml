@@ -63,7 +63,7 @@ const parseTeamData = (images) => {
     }
   }).sort((a, b) => {
     // Priority roles that should appear first
-    const priorityRoles = ['Secretary General', 'Deputy Secretary General', 'Under Secretary General', 'Director General'];
+    const priorityRoles = ['Secretary General', 'Deputy Secretary General', 'Under Secretary General', 'Director General', 'Organization Advisor'];
 
     // Check if either role is a priority role
     const aIsPriority = priorityRoles.some(role => a.role.toLowerCase().includes(role.toLowerCase()));
@@ -103,8 +103,7 @@ export const TeamGrid = ({ activeTeam = 'academy' }) => {
         alignItems="start"
       >
         {teamMembers.map((member, index) => {
-          const isPriorityRole = member.role.toLowerCase().includes('secretary') ||
-                               member.role.toLowerCase().includes('director');
+          const isPriorityRole = member.role.toLowerCase().includes('secretary') || member.role.toLowerCase().includes('director') || member.role.toLowerCase().includes('advisor');
 
           return (
             <TeamMember
