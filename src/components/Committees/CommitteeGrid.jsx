@@ -24,7 +24,7 @@ const committees = [
     image: committeeImages['/src/assets/committee-thumbnails/ilo.jpg'],
   },
   {
-    name: 'European Parliment',
+    name: 'European Parliament',
     link: '/committees/eu',
     image: committeeImages['/src/assets/committee-thumbnails/eu.jpg'],
   },

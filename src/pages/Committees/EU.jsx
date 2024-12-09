@@ -3,7 +3,7 @@ import CommitteePage from '../CommitteePage';
 
 const EUPage = () => {
   useEffect(() => {
-    document.title = 'European Parliment';
+    document.title = 'European Parliament';
   }, []);
 
   const euData = {
